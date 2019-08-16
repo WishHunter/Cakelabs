@@ -10,6 +10,12 @@
 	src: local('☺'), url('../fonts/MuseoSansCyrl_0.woff') format('woff'), url('../fonts/MuseoSansCyrl_0.ttf') format('truetype'), url('../fonts/MuseoSansCyrl_0.svg') format('svg')
 	font-weight: 300
 	font-style: normal
+@font-face
+	font-family: 'MuseoSansCyrl';
+	src: url('../fonts/ofont.ru_Museo Sans Cyrl 500.eot')
+	src: local('☺'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.woff') format('woff'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.ttf') format('truetype'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.svg') format('svg')
+	font-weight: 500
+	font-style: normal
 
 *, ::after, ::before
 	box-sizing: border-box
@@ -29,10 +35,14 @@ $color-main: #93C01F
 	.filters
 		display: flex
 		align-items: flex-start
+		justify-content: space-between
+		flex-wrap: wrap
 		margin-top: 82px
+		padding-bottom: 18px
 		font-size: 16px
 		font-weight: 400
 		line-height: 24px
+		border-bottom: 2px solid #f3f3f2
 		.filter
 			width: 20%
 			padding-right: 70px
@@ -74,8 +84,7 @@ $color-main: #93C01F
 			display: flex
 			flex-wrap: wrap
 			justify-content: space-between
-			max-width: 20%
-			flex-grow: 2
+			width: 400px
 			#slider_price
 				margin-bottom: 25px
 				width: 100%
@@ -83,6 +92,8 @@ $color-main: #93C01F
 				height: 3px
 				background-color: #E2E2E2
 				border: none
+				.ui-slider-handle
+					margin-left: 0
 			.ui-widget-header
 				background-color: $color-main
 				border: none
@@ -131,7 +142,7 @@ $color-main: #93C01F
 					height: 24px
 					display: block
 		.rooms
-			max-width: 20%
+			width: 260px
 			flex-grow: 1
 			.filter_shell 
 				color: #1e1e1e
@@ -147,21 +158,20 @@ $color-main: #93C01F
 				right: 20px
 				height: 100%
 		.square
-			max-width: 20%
+			width: 150px
 			flex-grow: 1
 		.floor
-			max-width: 20%
+			width: 150px
 			flex-grow: 1
 		.section
 			padding-right: 0
-			flex-grow: 2
+			width: 220px
 			display: flex
 			flex-wrap: wrap
 			align-items: flex-start
+			justify-content: space-between
 			.label
 				width: 100%
-			svg 
-				margin-right: 30px
 			.section_not_residential
 				fill: #F3F3F2
 				stroke: #959595
@@ -174,19 +184,87 @@ $color-main: #93C01F
 				cursor: pointer
 				&.active, &:hover
 					fill: #93C01F
-.result_status
-	display: flex
-	justify-content: center
-	color: #959595
-	font-size: 14px
-	font-weight: 300
-	line-height: 19px
-	#reset_filters
-		font-weight: 700
+	.result_status
+		display: flex
+		justify-content: center
 		color: #959595
 		font-size: 14px
-		font-weight: 700
+		font-weight: 300
 		line-height: 19px
-		margin-left: 40px
+		width: 100%
+		#reset_filters
+			font-weight: 700
+			color: #959595
+			font-size: 14px
+			font-weight: 700
+			line-height: 19px
+			margin-left: 40px
 
+.results_block
+	padding-top: 25px
+	.header_buttons
+		display: flex
+		justify-content: space-between
+		.sorts
+			a 
+				color: #1e1e1e
+				font-family: "MuseoSansCyrl"
+				font-size: 14px
+				font-weight: 500
+				line-height: 21px
+		.grouping
+			label
+				padding-left: 50px
+				p 
+					color: #959595
+					font-family: "MuseoSansCyrl"
+					font-size: 14px
+					font-weight: 500
+					line-height: 21px
+					position: relative
+					&:before 
+						content: ''
+						position: absolute
+						right: -40px
+						top: 50%
+						transform: translateY(-50%)
+						width: 30px
+						height: 8px
+						border-radius: 6.5px
+						background: #f3f3f2
+						box-shadow: inset 0px 1px 3px rgba(0,0,0,0.1)
+					&:after 
+						content: ''
+						position: absolute
+						right: -40px
+						top: 50%
+						transform: translateY(-50%)
+						border-radius: 100%
+						width: 14px
+						height: 14px
+						background: #93c01f
+						box-shadow: 2px 2px 4px rgba(0,0,0,0.1)
+						transition: all .2s
+						z-index: 2
+				input
+					display: none
+					&:checked + p 
+						color: #1e1e1e
+						&:after
+							right: -23px
+							z-index: 1
+			label:last-of-type
+				p:before
+					display: none
+				p:after
+					left: -45px
+				input:checked + p 
+					&:after
+						left: -28px
+	.results
+		display: flex
+		justify-content: space-between
+		.result
+			width: 33%
+			max-width: 440px
 
