@@ -11,7 +11,14 @@
 		  }
 		});
   });
+
+  $('#min_price').on('keydown', function(e){
+    if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
+      return false;
+    };
+  })
   $( "#min_price" ).on( "change", function() {
+    this.value = this.value.replace(/[^\d,]/g, '');
   	let slider = $('#slider_price');
   	if ($(this).val() < slider.slider( "option", "min" )) {
   		$(this).val(slider.slider( "option", "min" ));
@@ -22,7 +29,13 @@
   	slider.slider('values', 0, $(this).val());
   });
 
+  $('#max_price').on('keydown', function(e){
+    if(e.key.length == 1 && e.key.match(/[^0-9'".]/)){
+      return false;
+    };
+  })
   $( "#max_price" ).on( "change", function() {
+    $(this).value = $(this).value.replace(/[^\d,]/g, '');
   	let slider = $('#slider_price');
   	if ($(this).val() > slider.slider( "option", "max" )) {
   		$(this).val(slider.slider( "option", "max" ));
@@ -33,8 +46,4 @@
   	slider.slider('values', 1, $(this).val());
   });
 
- //  $('.price_input').on("keyup", function() {
- //    this.value = this.value.replace(/ /g,"");
- //    this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-	// })
 }())
