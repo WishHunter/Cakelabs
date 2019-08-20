@@ -1,19 +1,19 @@
 @font-face
 	font-family: 'MuseoSansCyrl'
 	src: url('../fonts/MuseoSansCyrl_2.eot')
-	src: local('☺'), url('../fonts/MuseoSansCyrl_2.woff') format('woff'), url('../fonts/MuseoSansCyrl_2.ttf') format('truetype'), url('../fonts/MuseoSansCyrl_2.svg') format('svg')
+	src: url('../fonts/MuseoSansCyrl_2.woff') format('woff'), url('../fonts/MuseoSansCyrl_2.ttf') format('truetype'), url('../fonts/MuseoSansCyrl_2.svg') format('svg')
 	font-weight: 700
 	font-style: normal
 @font-face
 	font-family: 'MuseoSansCyrl'
 	src: url('../fonts/MuseoSansCyrl_0.eot')
-	src: local('☺'), url('../fonts/MuseoSansCyrl_0.woff') format('woff'), url('../fonts/MuseoSansCyrl_0.ttf') format('truetype'), url('../fonts/MuseoSansCyrl_0.svg') format('svg')
+	src: url('../fonts/MuseoSansCyrl_0.woff') format('woff'), url('../fonts/MuseoSansCyrl_0.ttf') format('truetype'), url('../fonts/MuseoSansCyrl_0.svg') format('svg')
 	font-weight: 300
 	font-style: normal
 @font-face
 	font-family: 'MuseoSansCyrl';
 	src: url('../fonts/ofont.ru_Museo Sans Cyrl 500.eot')
-	src: local('☺'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.woff') format('woff'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.ttf') format('truetype'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.svg') format('svg')
+	src: url('../fonts/ofont.ru_Museo Sans Cyrl 500.woff') format('woff'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.ttf') format('truetype'), url('../fonts/ofont.ru_Museo Sans Cyrl 500.svg') format('svg')
 	font-weight: 500
 	font-style: normal
 
@@ -54,9 +54,15 @@
 
 html
 	color: #1e1e1e
+	font-size: 16px
 
 body, html
 	font-family: "MuseoSansCyrl"
+
+p 
+	margin-top: 0
+	margin-bottom: 0
+
 
 $color-main: #93C01F
 
@@ -70,7 +76,6 @@ $color-main: #93C01F
 		flex-wrap: wrap
 		margin-top: 82px
 		padding-bottom: 18px
-		font-size: 16px
 		font-weight: 400
 		line-height: 24px
 		border-bottom: 2px solid #f3f3f2
@@ -78,7 +83,6 @@ $color-main: #93C01F
 			width: 20%
 			position: relative
 		.label
-			font-size: 16px
 			font-weight: 700
 			line-height: 21px
 			margin-bottom: 18px
@@ -95,10 +99,8 @@ $color-main: #93C01F
 				input 
 					padding: 13px 5px
 					padding-left: 30px
-					font-size: 16px
 					font-weight: 300
 					text-align: center
-					line-height: 24px
 			&.input:before
 				content: 'от'
 				color: #e2e2e2
@@ -106,7 +108,7 @@ $color-main: #93C01F
 				top: 15px
 				left: 10px
 				height: 100%
-				font-size: 14px
+				font-size: .875rem
 				font-weight: 300
 				line-height: 19px
 			&.input:last-of-type:before
@@ -142,15 +144,11 @@ $color-main: #93C01F
 				outline: none
 			.input
 				position: relative
-				font-size: 16px
 				font-weight: 300
-				line-height: 24px
 				padding-left: 5px
 				input
 					height: 24px
-					font-size: 16px
 					font-weight: 300
-					line-height: 24px
 					border: none
 					background: none
 					width: 94px
@@ -180,15 +178,19 @@ $color-main: #93C01F
 			width: 260px
 			.filter_shell 
 				color: #1e1e1e
-				font-size: 16px
 				font-weight: 300
-				line-height: 24px
+				padding-right: 40px
 				text-decoration: none
 				transition: all .3s
+				span
+					white-space: nowrap
+					width: 100%
+					overflow: hidden
+					display: block
 				&:after
 					content: "\e901"
 					font-family: 'icomoon' !important
-					font-size: 10px
+					font-size: .625rem
 					color: #e2e2e2
 					position: absolute
 					top: 13px
@@ -231,16 +233,15 @@ $color-main: #93C01F
 		display: flex
 		justify-content: center
 		color: #959595
-		font-size: 14px
+		font-size: .875rem
 		font-weight: 300
 		line-height: 19px
 		width: 100%
 		#reset_filters
 			font-weight: 700
 			color: #959595
-			font-size: 14px
+			font-size: .875rem
 			font-weight: 700
-			line-height: 19px
 			margin-left: 40px
 			transition: all .3s
 			&:hover
@@ -252,27 +253,38 @@ $color-main: #93C01F
 	.header_buttons
 		display: flex
 		justify-content: space-between
+		align-items: center
 		.sorts
 			position: relative
-			padding-right: 100px
+			border: 1px solid transparent
+			padding: 13px 20px
+			min-width: 270px
 			a 
 				color: #1e1e1e
-				font-size: 14px
+				font-size: .875rem
 				font-weight: 500
 				line-height: 21px
 				vertical-align: middle
+				&:hover
+					text-decoration: none
+					color: $color-main
+			&.border
+				border-color: #e2e2e2
 			.icon-triangle
 				display: inline-block
 				margin-left: 10px
 				font-size: 7px
 				vertical-align: middle
+				transition: all .3s
+			a.open + .icon-triangle
+				transform: rotate(180deg)
 		.grouping
 			label
 				padding-left: 50px
 				cursor: pointer
 				p 
 					color: #959595
-					font-size: 14px
+					font-size: .875rem
 					font-weight: 500
 					line-height: 21px
 					position: relative
@@ -342,7 +354,7 @@ $color-main: #93C01F
 				margin-bottom: 10px
 			.old_price
 				color: #959595
-				font-size: 14px
+				font-size: .875rem
 				font-weight: 300
 				line-height: 19px
 				text-decoration: line-through

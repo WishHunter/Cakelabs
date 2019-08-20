@@ -2,21 +2,21 @@
 @font-face {
   font-family: 'MuseoSansCyrl';
   src: url("../fonts/MuseoSansCyrl_2.eot");
-  src: local("☺"), url("../fonts/MuseoSansCyrl_2.woff") format("woff"), url("../fonts/MuseoSansCyrl_2.ttf") format("truetype"), url("../fonts/MuseoSansCyrl_2.svg") format("svg");
+  src: url("../fonts/MuseoSansCyrl_2.woff") format("woff"), url("../fonts/MuseoSansCyrl_2.ttf") format("truetype"), url("../fonts/MuseoSansCyrl_2.svg") format("svg");
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: 'MuseoSansCyrl';
   src: url("../fonts/MuseoSansCyrl_0.eot");
-  src: local("☺"), url("../fonts/MuseoSansCyrl_0.woff") format("woff"), url("../fonts/MuseoSansCyrl_0.ttf") format("truetype"), url("../fonts/MuseoSansCyrl_0.svg") format("svg");
+  src: url("../fonts/MuseoSansCyrl_0.woff") format("woff"), url("../fonts/MuseoSansCyrl_0.ttf") format("truetype"), url("../fonts/MuseoSansCyrl_0.svg") format("svg");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
   font-family: 'MuseoSansCyrl';
   src: url("../fonts/ofont.ru_Museo Sans Cyrl 500.eot");
-  src: local("☺"), url("../fonts/ofont.ru_Museo Sans Cyrl 500.woff") format("woff"), url("../fonts/ofont.ru_Museo Sans Cyrl 500.ttf") format("truetype"), url("../fonts/ofont.ru_Museo Sans Cyrl 500.svg") format("svg");
+  src: url("../fonts/ofont.ru_Museo Sans Cyrl 500.woff") format("woff"), url("../fonts/ofont.ru_Museo Sans Cyrl 500.ttf") format("truetype"), url("../fonts/ofont.ru_Museo Sans Cyrl 500.svg") format("svg");
   font-weight: 500;
   font-style: normal; }
 
@@ -56,10 +56,15 @@
   max-width: 100%; }
 
 html {
-  color: #1e1e1e; }
+  color: #1e1e1e;
+  font-size: 16px; }
 
 body, html {
   font-family: "MuseoSansCyrl"; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 0; }
 
 .container {
   max-width: 1420px;
@@ -82,7 +87,6 @@ body, html {
             flex-wrap: wrap;
     margin-top: 82px;
     padding-bottom: 18px;
-    font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     border-bottom: 2px solid #f3f3f2; }
@@ -90,7 +94,6 @@ body, html {
       width: 20%;
       position: relative; }
     .container .filters .label {
-      font-size: 16px;
       font-weight: 700;
       line-height: 21px;
       margin-bottom: 18px; }
@@ -107,10 +110,8 @@ body, html {
         .container .filters .filter_shell.input input {
           padding: 13px 5px;
           padding-left: 30px;
-          font-size: 16px;
           font-weight: 300;
-          text-align: center;
-          line-height: 24px; }
+          text-align: center; }
       .container .filters .filter_shell.input:before {
         content: 'от';
         color: #e2e2e2;
@@ -118,7 +119,7 @@ body, html {
         top: 15px;
         left: 10px;
         height: 100%;
-        font-size: 14px;
+        font-size: .875rem;
         font-weight: 300;
         line-height: 19px; }
       .container .filters .filter_shell.input:last-of-type:before {
@@ -165,15 +166,11 @@ body, html {
         outline: none; }
       .container .filters .price .input {
         position: relative;
-        font-size: 16px;
         font-weight: 300;
-        line-height: 24px;
         padding-left: 5px; }
         .container .filters .price .input input {
           height: 24px;
-          font-size: 16px;
           font-weight: 300;
-          line-height: 24px;
           border: none;
           background: none;
           width: 94px;
@@ -205,17 +202,21 @@ body, html {
       width: 260px; }
       .container .filters .rooms .filter_shell {
         color: #1e1e1e;
-        font-size: 16px;
         font-weight: 300;
-        line-height: 24px;
+        padding-right: 40px;
         text-decoration: none;
         -webkit-transition: all .3s;
         -o-transition: all .3s;
         transition: all .3s; }
+        .container .filters .rooms .filter_shell span {
+          white-space: nowrap;
+          width: 100%;
+          overflow: hidden;
+          display: block; }
         .container .filters .rooms .filter_shell:after {
           content: "\e901";
           font-family: 'icomoon' !important;
-          font-size: 10px;
+          font-size: .625rem;
           color: #e2e2e2;
           position: absolute;
           top: 13px;
@@ -282,16 +283,15 @@ body, html {
         -ms-flex-pack: center;
             justify-content: center;
     color: #959595;
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 300;
     line-height: 19px;
     width: 100%; }
     .container .result_status #reset_filters {
       font-weight: 700;
       color: #959595;
-      font-size: 14px;
+      font-size: .875rem;
       font-weight: 700;
-      line-height: 19px;
       margin-left: 40px;
       -webkit-transition: all .3s;
       -o-transition: all .3s;
@@ -310,27 +310,45 @@ body, html {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-            justify-content: space-between; }
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
     .results_block .header_buttons .sorts {
       position: relative;
-      padding-right: 100px; }
+      border: 1px solid transparent;
+      padding: 13px 20px;
+      min-width: 270px; }
       .results_block .header_buttons .sorts a {
         color: #1e1e1e;
-        font-size: 14px;
+        font-size: .875rem;
         font-weight: 500;
         line-height: 21px;
         vertical-align: middle; }
+        .results_block .header_buttons .sorts a:hover {
+          text-decoration: none;
+          color: #93C01F; }
+      .results_block .header_buttons .sorts.border {
+        border-color: #e2e2e2; }
       .results_block .header_buttons .sorts .icon-triangle {
         display: inline-block;
         margin-left: 10px;
         font-size: 7px;
-        vertical-align: middle; }
+        vertical-align: middle;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s; }
+      .results_block .header_buttons .sorts a.open + .icon-triangle {
+        -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotate(180deg); }
     .results_block .header_buttons .grouping label {
       padding-left: 50px;
       cursor: pointer; }
       .results_block .header_buttons .grouping label p {
         color: #959595;
-        font-size: 14px;
+        font-size: .875rem;
         font-weight: 500;
         line-height: 21px;
         position: relative; }
@@ -415,7 +433,7 @@ body, html {
         margin-bottom: 10px; }
       .results_block .results .result .old_price {
         color: #959595;
-        font-size: 14px;
+        font-size: .875rem;
         font-weight: 300;
         line-height: 19px;
         text-decoration: line-through; }
