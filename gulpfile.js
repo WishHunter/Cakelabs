@@ -47,18 +47,6 @@ gulp.task('clean', function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
 
-// gulp.task('img', function() {
-// 	return gulp.src('app/img/**/*') // Берем все изображения из app
-// 	.pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
-// 		optimizationLevel: 2,
-// 		interlaced: true,
-// 		progressive: true,
-// 		svgoPlugins: [{removeViewBox: false}],
-// 		use: [pngquant()]
-// 	})))
-// 	.pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
-// });
-
 gulp.task('img', function() {
 	return gulp.src('app/img/**/*') // Берем все изображения из app
 	.pipe(cache(imagemin([  // Сжимаем их с наилучшими настройками с учетом кеширования
