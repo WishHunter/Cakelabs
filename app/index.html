@@ -18,11 +18,11 @@
 				<p class="label">Стоимость</p>
 				<div id="slider_price"></div>
 				<div class="input">
-					<input type="text" class="price_input" id="min_price" value="2345000">
+					<input type="text" class="only_number price_input" id="min_price" value="2345000">
 					<label></label>
 				</div>
 				<div class="input">
-					<input type="text" class="price_input" id="max_price" value="11786000">
+					<input type="text" class="only_number price_input" id="max_price" value="11786000">
 					<label></label>
 				</div>
 			</div>
@@ -30,18 +30,38 @@
 			<div class="filter rooms">
 				<p class="label">Количество комнат</p>
 				<a href="#rooms_block" class="filter_shell select"><span>Любое</span></a>
-				<div id="rooms_block" class="select_block">
+				<div id="rooms_block" class="select_block" tabindex="-1">
 					<label>
-						<input name="rooms_block" type="checkbox">
+						<input name="rooms_block" value='XS' type="checkbox">
 						<p>XS (Студия)</p>
 					</label>
 					<label>
-						<input name="rooms_block" type="checkbox">
+						<input name="rooms_block" value='1' type="checkbox">
 						<p>Однокомнатная</p>
 					</label>
 					<label>
-						<input name="rooms_block" type="checkbox">
+						<input name="rooms_block" value='S' type="checkbox">
 						<p>S (2-евро)</p>
+					</label>
+					<label>
+						<input name="rooms_block" value='2' type="checkbox">
+						<p>Двухкомнатная</p>
+					</label>
+					<label>
+						<input name="rooms_block" value='M' type="checkbox">
+						<p>M (3-евро)</p>
+					</label>
+					<label>
+						<input name="rooms_block" value='3' type="checkbox">
+						<p>Трехкомнатная</p>
+					</label>
+					<label>
+						<input name="rooms_block" value='L' type="checkbox">
+						<p>L (4-евро)</p>
+					</label>
+					<label>
+						<input name="rooms_block" value='4' type="checkbox">
+						<p>Четырехкомнатная</p>
 					</label>
 				</div>
 			</div>
@@ -49,17 +69,17 @@
 			<div class="filter square">
 				<p class="label">Площадь, м2</p>
 				<div class="input_block">
-					<div class="filter_shell input"><input type="text" id="min_rooms"></div>
-					<div class="filter_shell input"><input type="text" id="max_rooms"></div>
+					<div class="filter_shell input"><input type="text" class="only_number" id="min_rooms"></div>
+					<div class="filter_shell input"><input type="text" class="only_number" id="max_rooms"></div>
 				</div>
 			</div>
 
 			<div class="filter floor">
 				<p class="label">Этаж</p>
 				<div class="input_block">
-					<div class="filter_shell input"><input type="text" id="min_floor"></div>
-					<div class="filter_shell input"><input type="text" id="max_floor"></div>
-				</div>
+					<div class="filter_shell input"><input type="text" class="only_number" id="min_floor"></div>
+					<div class="filter_shell input"><input type="text" class="only_number" id="max_floor"></div>
+				</div> 
 			</div>
 
 			<div class="filter section">
@@ -116,7 +136,26 @@
 		<div class="results_block">
 			<div class="header_buttons">
 				<div class="sorts">
-					<a href="">Сортировать по <span>цене</span></a>
+					<a href="#sorts_block" class="select">Сортировать по <span>цене</span></a>
+					<span class="icon-triangle"></span>
+					<div id="sorts_block" class="select_block">
+						<label class="radio">
+							<input name="sorts_block" type="radio">
+							<p>По цене, сначала дешевле</p>
+						</label>
+						<label class="radio">
+							<input name="sorts_block" type="radio">
+							<p>По цене, сначала дороже</p>
+						</label>
+						<label class="radio">
+							<input name="sorts_block" type="radio">
+							<p>По площади, сначала меньше</p>
+						</label>
+						<label class="radio">
+							<input name="sorts_block" type="radio">
+							<p>По площади, сначала больше</p>
+						</label class="radio">
+					</div>
 				</div>
 				<div class="grouping">
 					<label>
